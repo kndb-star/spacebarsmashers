@@ -1,0 +1,160 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #87CEEB; /* Sky Blue background */
+    transition: background-color 1s ease;
+}
+
+.cloud {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url('https://www.pikpng.com/pngl/b/170-1709571_cartoon-clip-art-cartoon-white-clouds-png-transparent.png') no-repeat;
+    background-size: 10%; /* Adjust the size as needed */
+    z-index: -1; /* Place clouds behind other content */
+}
+
+.cloudslow {
+    animation: rightToLeft 80s linear infinite;
+    top: 50px;
+}
+
+.cloudfast {
+    animation: rightToLeft 30s linear infinite;
+    top: 120px;
+}
+
+.astro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rightToLeft 200s linear infinite;
+    z-index: -1;
+    top: 20px;
+}
+
+.sun {
+    background: transparent url('https://www.pinclipart.com/picdir/big/131-1319612_sun-illustration-sunshine-clip-art-archive-scrapbook-smiley.png') no-repeat;
+    background-size: 8%; /* Adjust the size as needed */
+}
+
+.moon {
+    background: transparent url('https://i.ibb.co/KW2k6sJ/crescent-moon.png') no-repeat;
+    background-size: 5%; /* Adjust the size as needed */
+}
+
+.star {
+    position: absolute;
+    background-color: #fff; /* White stars */
+    border-radius: 50%;
+    visibility: hidden;
+    animation: twinkle 3s linear infinite alternate;
+}
+
+.star1 {
+    width: 1px;
+    height: 1px;
+    top: 10%;
+    left: 10%;
+}
+
+.star2 {
+    width: 1px;
+    height: 1px;
+    top: 30%;
+    left: 50%;
+}
+
+.star3 {
+    width: 2px;
+    height: 2px;
+    top: 70%;
+    right: 20%;
+}
+
+.star4 {
+    width: 1px;
+    height: 1px;
+    top: 80%;
+    left: 20%;
+}
+
+
+@keyframes rightToLeft {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-10%); /* Move clouds from right to left */
+    }
+}
+
+.bird {
+    width: 60px;
+    height: 60px;
+    background-size: 60px 60px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transition: transform 0.3s ease; /* Smooth transition for bird movement */
+    background-image: url('https://www.pngmart.com/files/12/Flappy-Bird-PNG-Transparent-Image.png');
+}
+
+
+.evil {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url('https://i.ibb.co/bQqrvTW/image.png') no-repeat;
+    background-size: 5%; /* Adjust the size as needed */
+}
+
+.evilslow {
+    animation: rightToLeft 20s linear infinite;
+}
+
+.evilfast {
+    animation: rightToLeft 10s linear infinite;
+}
+
+.bonus {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rightToLeft 20s linear infinite;
+}
+
+.bonus10 {
+    background: transparent url('https://i.ibb.co/4WhxHns/anniversary10.png') no-repeat;
+    background-size: 5%; /* Adjust the size as needed */
+}
+
+.bonus50 {
+    background: transparent url('https://i.ibb.co/cyDqdQY/anniversary50.png') no-repeat;
+    background-size: 5%; /* Adjust the size as needed */
+}
+
+.bonus100 {
+    background: transparent url('https://i.ibb.co/0qz68XL/anniversary.png') no-repeat;
+    background-size: 5%; /* Adjust the size as needed */
+}
+
+.jumping {
+    animation: jump 0.3s ease; /* Apply the jump animation */
+}
+
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0); /* Start and end position (no jump) */
+    }
+
+    30% {
+        transform: translateY(-150px); /* Jump up */
+    }
+
+    70% {
+        transform: translateY(-150px); /* Hold position at the top of the jump */
+    }
+}
