@@ -152,6 +152,8 @@ let isAlive = setInterval(function () {
             const customPopup = document.getElementById('customPopup');
             customPopup.style.display = 'block';
 
+            document.getElementsByClassName('bird')[0].remove();
+
             // calculate simulation credits and hit API
         }
     }
@@ -170,6 +172,12 @@ let isAlive = setInterval(function () {
             updateScore(score);
 
             document.getElementsByClassName(str)[0].remove();
+            bird.classList.add('hue');
+
+            setTimeout(() => {
+                bird.classList.remove('hue');
+            }, 500);
+
         }
     }
 }, 10);

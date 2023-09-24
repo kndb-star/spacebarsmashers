@@ -101,6 +101,7 @@
     left: 5%;
     transition: transform 0.3s ease;
     background-image: url('https://www.pngmart.com/files/12/Flappy-Bird-PNG-Transparent-Image.png');
+    z-index: 0;
 }
 
 .evil {
@@ -168,6 +169,27 @@
     animation: scoreAnimation 0.5s ease-in-out;
 }
 
+.hue {
+    animation: hueAnimation 0.5s ease-in-out;
+}
+
+@keyframes hueAnimation {
+    0% {
+        filter: hue-rotate(0deg);
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+        filter: hue-rotate(45deg);
+    }
+
+    100% {
+        filter: hue-rotate(0deg);
+        transform: scale(1);
+    }
+}
+
 @keyframes scoreAnimation {
     0% {
         transform: scale(1);
@@ -198,7 +220,7 @@
     left: 0%;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
     justify-content: center;
     align-items: center;
     z-index: 1;
