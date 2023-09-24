@@ -35,7 +35,7 @@ moon.addEventListener('animationiteration', () => {
 function changeStarVisibility(visibility) {
     const stars = document.querySelectorAll('.star');
 
-    stars.forEach(function(star) {
+    stars.forEach(function (star) {
         star.style.visibility = visibility ? 'visible' : 'hidden';
     });
 }
@@ -72,8 +72,8 @@ function createEvil() {
         const maxTop = 90;
         const randomTop = Math.random() * (maxTop - minTop) + minTop;
 
-        const div = document.createElement('div'); 
-        div.classList.add('evil'); 
+        const div = document.createElement('div');
+        div.classList.add('evil');
 
         const shouldBeFast = Math.random() < 0.4; // set close to 1 for more fast evils
         if (shouldBeFast) {
@@ -81,8 +81,8 @@ function createEvil() {
         } else {
             div.classList.add('evilslow');
         }
-        div.style.top = `${randomTop}%`; 
-        document.body.appendChild(div); 
+        div.style.top = `${randomTop}%`;
+        document.body.appendChild(div);
 
         div.addEventListener('animationiteration', () => {
             div.remove();
@@ -103,7 +103,7 @@ function createBonus() {
 
     let shouldAdd = true;
     if (evilCounter % 50 == 0) {
-        div.classList.add('bonus100'); 
+        div.classList.add('bonus100');
     } else if (evilCounter % 20 == 0) {
         div.classList.add('bonus50');
     } else if (evilCounter % 5 == 0 || evilCounter % 3 == 0) {
@@ -113,8 +113,8 @@ function createBonus() {
     }
 
     if (shouldAdd) {
-        
-         div.classList.add('bonusSize');
+
+        div.classList.add('bonusSize');
         div.style.top = `${randomTop}%`;
         document.body.appendChild(div);
 
@@ -129,7 +129,7 @@ function updateScore(score) {
     const scoreElement = document.getElementById('scoreValue');
     scoreElement.textContent = score;
 
-     if (score % 100 == 0) {
+    if (score % 100 == 0) {
         scoreElement.parentElement.classList.add('reached-100');
     } else {
         // Remove the animation class if the score changes
@@ -137,44 +137,39 @@ function updateScore(score) {
     }
 }
 
-let isAlive = setInterval(function() {
+let isAlive = setInterval(function () {
 
-      const evil = document.getElementsByClassName("evil");
+    const evil = document.getElementsByClassName("evil");
 
-      let birdTop = bird.getBoundingClientRect().top;
-      let birdLeft = bird.getBoundingClientRect().left;
+    let birdTop = bird.getBoundingClientRect().top;
+    let birdLeft = bird.getBoundingClientRect().left;
 
-      for (let i = 0; i < evil.length; i++) {
+    for (let i = 0; i < evil.length; i++) {
         let evilTop = evil[i]?.getBoundingClientRect().top;
         let evilLeft = evil[i]?.getBoundingClientRect().left;
         if (evilTop >= birdTop && evilTop <= birdTop + 60 && evilLeft >= birdLeft && evilLeft <= birdLeft + 60) {
-          console.log('Game over!');
 
-          const customPopup = document.getElementById('customPopup');
+            const customPopup = document.getElementById('customPopup');
             customPopup.style.display = 'block';
 
             // calculate simulation credits and hit API
         }
-        }
+    }
 
-        const bonus = document.getElementsByClassName("bonus");
+    const bonus = document.getElementsByClassName("bonus");
 
-        for (let i = 0; i < bonus.length; i++) {
-          let bonusTop = bonus[i]?.getBoundingClientRect().top;
-          let bonusLeft = bonus[i]?.getBoundingClientRect().left;
-          if (bonusTop >= birdTop && bonusTop <= birdTop + 60 && bonusLeft >= birdLeft && bonusLeft <= birdLeft + 60) {
-          	
+    for (let i = 0; i < bonus.length; i++) {
+        let bonusTop = bonus[i]?.getBoundingClientRect().top;
+        let bonusLeft = bonus[i]?.getBoundingClientRect().left;
+        if (bonusTop >= birdTop && bonusTop <= birdTop + 60 && bonusLeft >= birdLeft && bonusLeft <= birdLeft + 60) {
+
             const str = bonus[i]?.classList[1];
             let score = parseInt(document.getElementById("scoreValue").textContent);
-            score += parseInt( str.match(/\d+/)[0], 10);
-            
+            score += parseInt(str.match(/\d+/)[0], 10);
+
             updateScore(score);
-            
+
             document.getElementsByClassName(str)[0].remove();
-          }
-        } 
-      }, 10);
-
-
-
-
+        }
+    }
+}, 10);

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #009ACD; /* Sky Blue background */
+    background-color: #009ACD;
     transition: background-color 1s ease;
 }
 
@@ -11,7 +11,7 @@
     width: 100%;
     height: 100%;
     background: transparent url('https://www.pikpng.com/pngl/b/170-1709571_cartoon-clip-art-cartoon-white-clouds-png-transparent.png') no-repeat;
-    background-size: 10%; /* Adjust the size as needed */
+    background-size: 10%;
     z-index: -1; /* Place clouds behind other content */
 }
 
@@ -35,18 +35,18 @@
 }
 
 .sun {
-    background: transparent url('https://www.pinclipart.com/picdir/big/131-1319612_sun-illustration-sunshine-clip-art-archive-scrapbook-smiley.png') no-repeat;
-    background-size: 8%; /* Adjust the size as needed */
+    background: transparent url('assets/sun.png') no-repeat;
+    background-size: 6%
 }
 
 .moon {
     background: transparent url('https://i.ibb.co/KW2k6sJ/crescent-moon.png') no-repeat;
-    background-size: 5%; /* Adjust the size as needed */
+    background-size: 4%;
 }
 
 .star {
     position: absolute;
-    background-color: #fff; /* White stars */
+    background-color: #fff;
     border-radius: 50%;
     visibility: hidden;
     animation: twinkle 3s linear infinite alternate;
@@ -88,7 +88,7 @@
     }
 
     100% {
-        transform: translateX(-10%); /* Move clouds from right to left */
+        transform: translateX(-10%);
     }
 }
 
@@ -99,7 +99,7 @@
     position: absolute;
     top: 50%;
     left: 5%;
-    transition: transform 0.3s ease; /* Smooth transition for bird movement */
+    transition: transform 0.3s ease;
     background-image: url('https://www.pngmart.com/files/12/Flappy-Bird-PNG-Transparent-Image.png');
 }
 
@@ -112,13 +112,13 @@
 
 .evilslow {
     background: transparent url('assets/evilslow.png') no-repeat;
-    background-size: 6%; /* Adjust the size as needed */
+    background-size: 6%;
     animation: rightToLeft 20s linear infinite;
 }
 
 .evilfast {
     background: transparent url('assets/evilfast.png') no-repeat;
-    background-size: 5%; /* Adjust the size as needed */
+    background-size: 5%;
     animation: rightToLeft 5s linear infinite;
 }
 
@@ -126,7 +126,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    animation: rightToLeft 25s linear infinite;  
+    animation: rightToLeft 25s linear infinite;
 }
 
 .bonus10 {
@@ -146,25 +146,26 @@
 }
 
 .jumping {
-    animation: jump 0.3s ease; /* Apply the jump animation */
+    animation: jump 0.3s ease;
 }
 
 @keyframes jump {
+
     0%, 100% {
-        transform: translateY(0); /* Start and end position (no jump) */
+        transform: translateY(0);
     }
 
     30% {
-        transform: translateY(-150px); /* Jump up */
+        transform: translateY(-150px);
     }
 
     70% {
-        transform: translateY(-150px); /* Hold position at the top of the jump */
+        transform: translateY(-150px);
     }
 }
 
 .score.reached-100 {
-    animation: scoreAnimation 0.5s ease-in-out; /* Apply the animation */
+    animation: scoreAnimation 0.5s ease-in-out;
 }
 
 @keyframes scoreAnimation {
@@ -186,7 +187,7 @@
     top: 1%;
     left: 1%;
     position: absolute;
-    font-size: 25px; /* Adjust font size as needed */
+    font-size: 25px;
     color: #000000;
 }
 
@@ -197,7 +198,7 @@
     left: 0%;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Background with opacity */
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
     z-index: 1;
