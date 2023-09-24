@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #87CEEB; /* Sky Blue background */
+    background-color: #009ACD; /* Sky Blue background */
     transition: background-color 1s ease;
 }
 
@@ -17,21 +17,21 @@
 
 .cloudslow {
     animation: rightToLeft 80s linear infinite;
-    top: 50px;
+    top: 10%;
 }
 
 .cloudfast {
     animation: rightToLeft 30s linear infinite;
-    top: 120px;
+    top: 20%;
 }
 
 .astro {
     position: absolute;
     width: 100%;
     height: 100%;
-    animation: rightToLeft 200s linear infinite;
+    animation: rightToLeft 100s linear infinite;
     z-index: -1;
-    top: 20px;
+    top: 5%;
 }
 
 .sun {
@@ -50,11 +50,12 @@
     border-radius: 50%;
     visibility: hidden;
     animation: twinkle 3s linear infinite alternate;
+    z-index: -1;
 }
 
 .star1 {
-    width: 1px;
-    height: 1px;
+    width: 2px;
+    height: 2px;
     top: 10%;
     left: 10%;
 }
@@ -102,43 +103,46 @@
     background-image: url('https://www.pngmart.com/files/12/Flappy-Bird-PNG-Transparent-Image.png');
 }
 
-
 .evil {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: transparent url('https://i.ibb.co/bQqrvTW/image.png') no-repeat;
-    background-size: 5%; /* Adjust the size as needed */
+    transition: transform 0.3s ease;
 }
 
 .evilslow {
+    background: transparent url('assets/evilslow.png') no-repeat;
+    background-size: 6%; /* Adjust the size as needed */
     animation: rightToLeft 20s linear infinite;
 }
 
 .evilfast {
-    animation: rightToLeft 10s linear infinite;
+    background: transparent url('assets/evilfast.png') no-repeat;
+    background-size: 5%; /* Adjust the size as needed */
+    animation: rightToLeft 5s linear infinite;
 }
 
 .bonus {
     position: absolute;
     width: 100%;
     height: 100%;
-    animation: rightToLeft 20s linear infinite;
+    animation: rightToLeft 25s linear infinite;  
 }
 
 .bonus10 {
-    background: transparent url('https://i.ibb.co/4WhxHns/anniversary10.png') no-repeat;
-    background-size: 5%; /* Adjust the size as needed */
+    background: transparent url('assets/10.png') no-repeat;
 }
 
 .bonus50 {
-    background: transparent url('https://i.ibb.co/cyDqdQY/anniversary50.png') no-repeat;
-    background-size: 5%; /* Adjust the size as needed */
+    background: transparent url('assets/50.png') no-repeat;
 }
 
 .bonus100 {
-    background: transparent url('https://i.ibb.co/0qz68XL/anniversary.png') no-repeat;
-    background-size: 5%; /* Adjust the size as needed */
+    background: transparent url('assets/100.png') no-repeat;
+}
+
+.bonusSize {
+    background-size: 3%;
 }
 
 .jumping {
@@ -157,4 +161,62 @@
     70% {
         transform: translateY(-150px); /* Hold position at the top of the jump */
     }
+}
+
+.score.reached-100 {
+    animation: scoreAnimation 0.5s ease-in-out; /* Apply the animation */
+}
+
+@keyframes scoreAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(2);
+        color: #fff734;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.score {
+    top: 1%;
+    left: 1%;
+    position: absolute;
+    font-size: 25px; /* Adjust font size as needed */
+    color: #000000;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Background with opacity */
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 20%;
+    left: 40%;
+    top: 40%;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
